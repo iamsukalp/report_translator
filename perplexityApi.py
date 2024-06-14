@@ -1,6 +1,6 @@
 import requests
 import json
-
+import streamlit as st
 
 def get_result(prompt):
     url = "https://api.perplexity.ai/chat/completions"
@@ -21,7 +21,7 @@ def get_result(prompt):
     headers = {
         "accept": "application/json",
         "content-type": "application/json",
-        "authorization": "Bearer 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"
+        "authorization": st.secrets['API_KEY']
     }
 
     response = requests.post(url, json=payload, headers=headers)
