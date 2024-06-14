@@ -4,7 +4,7 @@ from PIL import Image
 import io
 import streamlit as st
 
-pytesseract.pytesseract.tesseract_cmd = r"https://github.com/learntripathi/report_translator/tree/main/Tesseract-OCR/tesseract.exe"
+# pytesseract.pytesseract.tesseract_cmd = r"https://github.com/learntripathi/report_translator/tree/main/Tesseract-OCR/tesseract.exe"
 
 # @st.cache_resource
 # def find_tesseract_binary() -> str:
