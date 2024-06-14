@@ -15,7 +15,7 @@ def download_file(file_path, file_name):
                 label="Download file",
                 data=file,
                 file_name=file_name,
-                mime="application/octet-stream"
+                mime="text"
             )
 
 
@@ -32,7 +32,7 @@ def get_traslation(uplaoded_file):
     
     save_text_file(uplaoded_file,translated_text)
     filename = uplaoded_file.name
-    filename = f"output/{filename.split('.')[0]}.txt"
+    filename = f"{filename.split('.')[0]}.txt"
     download_file(filename,filename)
      
     
