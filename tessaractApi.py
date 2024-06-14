@@ -4,16 +4,16 @@ from PIL import Image
 import io
 import streamlit as st
 
-pytesseract.pytesseract.tesseract_cmd = None
+pytesseract.pytesseract.tesseract_cmd = r"https://github.com/learntripathi/report_translator/tree/main/Tesseract-OCR/tesseract.exe"
 
-@st.cache_resource
-def find_tesseract_binary() -> str:
-    return shutil.which("tesseract")
+# @st.cache_resource
+# def find_tesseract_binary() -> str:
+#     return shutil.which("tesseract")
 
-pytesseract.pytesseract.tesseract_cmd = find_tesseract_binary()
+# pytesseract.pytesseract.tesseract_cmd = find_tesseract_binary()
 
-if not pytesseract.pytesseract.tesseract_cmd:
-    st.error("Tesseract binary not found in PATH. Please install Tesseract.")
+# if not pytesseract.pytesseract.tesseract_cmd:
+#     st.error("Tesseract binary not found in PATH. Please install Tesseract.")
 
 # Function to convert PDF page to image and then to bytes
 def pdf_page_to_image_bytes(page):
