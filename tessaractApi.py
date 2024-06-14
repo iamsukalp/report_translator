@@ -2,6 +2,7 @@ import pdfplumber
 import pytesseract
 from PIL import Image
 import io
+import streamlit as st
 
 pytesseract.pytesseract.tesseract_cmd = None
 
