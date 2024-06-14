@@ -10,12 +10,11 @@ st.set_page_config(layout="wide", page_title='Report Translator', page_icon=':sp
 
 
 def download_file(file_path, file_name):
-        with open(file_path, "rb") as file:
-            btn = st.download_button(
-                label="Download file",
-                data=file,
-                file_name=file_name,
-                mime="text"
+    btn = st.download_button(
+        label="Download file",
+        data=file,
+        file_name=file_name,
+        mime="text"
             )
 
 
@@ -30,10 +29,10 @@ def get_traslation(uplaoded_file):
     prompt = get_prompt(extracted_text)
     translated_text = get_result(prompt)
     
-    save_text_file(uplaoded_file,translated_text)
+    # save_text_file(uplaoded_file,translated_text)
     filename = uplaoded_file.name
     filename = f"{filename.split('.')[0]}.txt"
-    download_file(filename,filename)
+    download_file(uploaded_file,filename)
      
     
 def report_tab():
