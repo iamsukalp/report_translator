@@ -3,7 +3,16 @@ import pytesseract
 from PIL import Image
 import io
 
-pytesseract.pytesseract.tesseract_cmd = r"Tesseract-OCR\tesseract.exe"
+pytesseract.pytesseract.tesseract_cmd = None
+
+@st.cache_resource
+def find_tesseract_binary() -> str:
+    return shutil.which("tesseract")
+
+pytesseract.pytesseract.tesseract_cmd = find_tesseract_binary()
+
+if not pytesseract.pytesseract.tesseract_cmd:
+    st.error("Tesseract binary not found in PATH. Please install Tesseract.")
 
 # Function to convert PDF page to image and then to bytes
 def pdf_page_to_image_bytes(page):
